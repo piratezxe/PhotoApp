@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -23,25 +24,31 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Twoj Profil
-                </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Szukaj
-                </a>
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Ranking
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                    @guest
+                        <a class="nav-link" href="">Home</a>
+                    @else
+                        <ul class="navbar-nav mr-auto">
+                            <li>
+                                <a class="navbar-brand" href="{{ url('/profil') }}">Twoj Profil</a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" href="{{ url('/search') }}">
+                                    Szukaj
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navbar-brand" href="{{ url('/') }}">
+                                    Nowe
+                                </a>
+                            </li>
+                        </ul>
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -56,7 +63,8 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
