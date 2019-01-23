@@ -26,6 +26,8 @@ Route::get('/profil', function () {
     return view('profil');
 });
 
+Route::get('user/{id}', 'UserController@filter');
+
 Route::get('user', 'UserController@show');
 
 Route::resource('photo', 'GalleryController');

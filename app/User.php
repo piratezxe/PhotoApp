@@ -19,6 +19,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'name', 'email', 'password',
     ];
 
+    protected $plec = [
+        'Men',
+        'Women',
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *

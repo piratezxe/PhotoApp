@@ -18,7 +18,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Biala Podlaska" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0"type="submit">Szukaj</button>
+                <button class="btn btn-outline-success my-2 my-sm-0"type="submit" href="" class="btn btn-default"> Norm Index </a>                    ">Szukaj</button>
             </form>
         </div>
     </nav>
