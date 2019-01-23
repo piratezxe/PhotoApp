@@ -38,13 +38,13 @@
                                 <a class="navbar-brand" href="{{ url('/profil') }}">Twoj Profil</a>
                             </li>
                             <li>
-                                <a class="navbar-brand" href="{{ url('/search') }}">
+                                <a class="navbar-brand" href="{{ url('/user') }}">
                                     Szukaj
                                 </a>
                             </li>
                             <li>
-                                <a class="navbar-brand" href="{{ url('/') }}">
-                                    Nowe
+                                <a class="navbar-brand" href="{{ url('/online') }}">
+                                    Online
                                 </a>
                             </li>
                         </ul>
