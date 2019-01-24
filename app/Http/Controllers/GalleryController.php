@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -14,14 +15,24 @@ class GalleryController extends Controller
     }
 
     //show created form
-    public function create()
-    {
-        return view('photo.create');
+    public function create(){
+
+
     }
 
     //store a newly created resources in storage
     public function store(Request $request)
     {
+        if($request->file('input_img')->isValid()) {
+            try {
+                $file = $request->file('input_img');
+                $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+                $request->file('input_img')->move("fotoupload", $name);
+            } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+
+            }
+            return back()->with('success','Image Upload successfully');
+        }
     }
 
     public function show(Photos $photos)

@@ -22,11 +22,15 @@ Route::get('/search', function () {
     return view('search');
 });
 
-Route::get('/profil', function () {
-    return view('profil');
-});
+Route::get('profil/{id}', 'UserController@profil');
+
+Route::get('profil/', 'UserController@yourprofil');
+
+Route::post('profil/photo', 'GalleryController@store');
 
 Route::get('user/{id}', 'UserController@filter');
+
+Route::get('userOnline', 'UserController@show');
 
 Route::get('user', 'UserController@show');
 

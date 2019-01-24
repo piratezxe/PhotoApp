@@ -35,7 +35,7 @@
                     @else
                         <ul class="navbar-nav mr-auto">
                             <li>
-                                <a class="navbar-brand" href="{{ url('/profil') }}">Twoj Profil</a>
+                                <a class="navbar-brand" href="{{ url('/profil/') }}">Twoj Profil</a>
                             </li>
                             <li>
                                 <a class="navbar-brand" href="{{ url('/user') }}">
@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="navbar-brand" href="{{ url('/online') }}">
+                                <a class="navbar-brand" href="{{ url('/userOnline') }}">
                                     Online
                                 </a>
                             </li>
