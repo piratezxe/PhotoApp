@@ -22,15 +22,13 @@ Route::get('/search', function () {
     return view('search');
 });
 
-Route::get('/profil', function () {
-    return view('profil');
-});
+Route::get('/showUserById/{id?}', 'UserController@showUserById');
 
 Route::get('user/{id}', 'UserController@filter');
 
 Route::get('user', 'UserController@show');
 
-Route::resource('photo', 'GalleryController');
+Route::resource('photos','PhotoController');
 
 Auth::routes(['verify' => true]);
 

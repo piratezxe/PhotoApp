@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "matthewbdaly/laravel-azure-storage": "^1.2"
+        "matthewbdaly/laravel-azure-storage": "^1.2",
+        "kim/activity": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

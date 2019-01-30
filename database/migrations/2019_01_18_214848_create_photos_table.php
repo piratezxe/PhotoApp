@@ -17,10 +17,8 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('title');
-            $table->string('uri');
-            $table->boolean('public');
-            $table->integer('height');
-            $table->integer('width');
+            $table->string('description');
+            $table->string('image');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -1,18 +1,29 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: rusek
- * Date: 22.01.2019
- * Time: 17:43
- */
-
 namespace App\Http\Controllers;
-use App\User;
+use Activity;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 
 class UserController extends Controller
 {
+
+    public function getCurrentUser($id)
+    {
+        if($id == Null)
+        {
+            return Auth::user();
+        }
+        $user = User::find($id);
+        return currentUser;
+    }
+
+    public function showUserById($id = null)
+    {
+        $users = $this->getCurrentUser($id);
+        return view('profil', ['users' => $users]);
+    }
     public static function show()
     {
         $users = DB::table('users')->get();
@@ -22,5 +33,10 @@ class UserController extends Controller
     {
         $users = DB::table('users')->where('name', "{$id}")->get();
         return view('user', ['users' => $users]);
+    }
+    public static function activity()
+    {
+        $activities = Activity::users(60)->get();  // Last 60 minutes
+        return view('user', ['users' => $activities]);
     }
 }
