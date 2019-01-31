@@ -89,6 +89,14 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/matthewbdaly/laravel-azure-storage" />
+      <path value="$PROJECT_DIR$/vendor/microsoft/azure-storage-blob" />
+      <path value="$PROJECT_DIR$/vendor/microsoft/azure-storage-common" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/highideas/laravel-users-online" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-azure-blob-storage" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/joshrainwater/active-users" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

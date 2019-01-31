@@ -18,7 +18,6 @@ class UserController extends Controller
         $user = User::find($id);
         return currentUser;
     }
-
     public function showUserById($id = null)
     {
         $users = $this->getCurrentUser($id);
@@ -33,10 +32,5 @@ class UserController extends Controller
     {
         $users = DB::table('users')->where('name', "{$id}")->get();
         return view('user', ['users' => $users]);
-    }
-    public static function activity()
-    {
-        $activities = Activity::users(60)->get();  // Last 60 minutes
-        return view('user', ['users' => $activities]);
     }
 }

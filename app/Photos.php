@@ -8,5 +8,6 @@ class Photos extends Model
 {
     protected $table = 'photos';
 
-    protected $fillable = ['uri', 'public','title' ,'height', 'width'];
+    protected $fillable = ['uri', 'public','title' ,'desc', 'user_id'];
+
 }

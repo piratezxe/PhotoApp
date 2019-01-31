@@ -18,14 +18,16 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Biala Podlaska" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0"type="submit" href="" class="btn btn-default"> Norm Index </a>                    ">Szukaj</button>
+                <button class="btn btn-outline-success my-2 my-sm-0"type="submit" href="" class="btn btn-default">
+                    Szukaj
+                </button>
             </form>
         </div>
     </nav>
     <div class="container">
         <div class="row">
             @foreach($users as $user)
-            <div class="col-md-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12">
                 <div class="row card" style="width: 18rem;"> <img class="card-img-top" src="https://pickaface.net/gallery/avatar/acrovin559439058dc7f.png" width="200" height="200" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">
@@ -34,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            @if ($loop->iteration % 2 == 0)
+            @if ($loop->iteration % 3 == 0)
                 </div>
         <div class="row">
         @endif

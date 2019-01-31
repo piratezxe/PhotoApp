@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Photo;
+use App\Photos;
 use Illuminate\Http\Request;
-
+use Auth;
 class PhotoController extends Controller
 {
     /**
@@ -35,26 +34,18 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-    		'title' => 'required',
-            'description' => 'required'
-        ]);
-
-
-        $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('images'), $input['image']);
-
-
-        $input['title'] = $request->title;
-        ImageGallery::create($input);
-
-
-    	return back()
-            ->with('success','Image Uploaded successfully.');
-
-        Photo::create($input);
-
-        return redirect()->route('profil')->with('success','Product created successfully.');
+            $this->validate($request, [
+                'title' => 'required',
+                'description' => 'required'
+            ]);
+            if ($request->hasFile('photo')) {
+                $path = $request->file('photo')->store('images');
+                $description = $request['description'];
+                $title = $request['title'];
+                $user_id = Auth::user()->id;
+                Photos::create(['title' => $title, 'desc' => $description, 'uri' => $path, 'user_id' =>  $user_id]);
+            }
+            return redirect()->route('profil')->with('success','Product created successfully.');
     }
 
     /**

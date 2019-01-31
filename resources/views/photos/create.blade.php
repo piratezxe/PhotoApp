@@ -15,7 +15,7 @@
 @endif
 <div class="card col-md-auto">
     <div class="card-body">
-        <form action="{{ route('photos.store') }}" method="POST">
+        <form method="POST" action="{{ route('photos.store') }}" enctype="multipart/form-data">
             {!! csrf_field() !!}
 
             <div class="form-group">
@@ -28,10 +28,10 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Example file input</label>
-                <input  value="{{ csrf_token() }}" type="file" name="image" class="form-control-file">
+                <input type="file" name="photo" class="custom-file-input">
             </div>
-            <a href="{{ url('/showUserById') }}" class="btn btn-info pull-right"> Back</a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ url('/showUserById') }}" class="btn btn-info pull-right"> Back</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>
