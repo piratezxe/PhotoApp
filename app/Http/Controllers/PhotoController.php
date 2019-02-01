@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Photos;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+
 class PhotoController extends Controller
 {
     /**
@@ -13,7 +16,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Photos::all();
+        return view();
     }
 
     /**
@@ -39,13 +43,15 @@ class PhotoController extends Controller
                 'description' => 'required'
             ]);
             if ($request->hasFile('photo')) {
-                $path = $request->file('photo')->store('images');
+                $image = $request->file('photo');
+                $path = $image->hashName();
                 $description = $request['description'];
                 $title = $request['title'];
                 $user_id = Auth::user()->id;
+                Storage::disk('local')->put('public/images/', $image, 'public');
                 Photos::create(['title' => $title, 'desc' => $description, 'uri' => $path, 'user_id' =>  $user_id]);
             }
-            return redirect()->route('profil')->with('success','Product created successfully.');
+            return Redirect::to('/showUserById');
     }
 
     /**
@@ -54,9 +60,10 @@ class PhotoController extends Controller
      * @param  \App\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(Photo $photo)
+
+    public function show($id)
     {
-        //
+
     }
 
     /**
