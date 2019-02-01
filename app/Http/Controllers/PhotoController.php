@@ -95,8 +95,10 @@ class PhotoController extends Controller
      * @param  \App\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photo $photo)
+    public function destroy($id)
     {
-        //
+        Photos::find($id)->delete();
+        return Redirect::to('/showUserById')->with('success', 'Stock has been deleted Successfully');;
+
     }
 }

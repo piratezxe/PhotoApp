@@ -28,10 +28,13 @@
                                 <p>
                                     {{$photo->desc}}
                                 </p>
-                                <a href="Show" class="btn btn-primary">Show</a>
-                                <a href="Edit" class="btn btn-secondary">Edit</a>
-                                <a href="Delete" class="btn btn-danger">Delete</a>
-
+                                <a href="Show" class="btn btn-primary">Show</a
+                                <a href="Show" class="btn btn-primary">Show</a
+                                <form action="{{ route('photos.destroy', $photo->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -43,7 +46,7 @@
             </div>
         </div>
         <a href="{{ route('photos.create') }}">
-            <button href="{{ route('photos.create') }}"  type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary">
                 Dodaj zdjecie
             </button>
         </a>
