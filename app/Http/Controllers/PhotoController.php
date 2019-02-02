@@ -72,21 +72,25 @@ class PhotoController extends Controller
      * @param  \App\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Photo $photo)
+    public function edit($id)
     {
-        //
+        return view('photos.edit', ['id' => $id]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Photo  $photo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Photo $photo)
+    
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'desc'=>'required'
+        ]);
+        $photo = Photos::find($id);
+        $title = $request->get('title');
+        $desc = $request->get('desc');
+        $photo->title = $title;
+        $photo->desc = $desc;
+        $photo->save();
+        return redirect()->back();
     }
 
     /**
@@ -99,6 +103,5 @@ class PhotoController extends Controller
     {
         Photos::find($id)->delete();
         return Redirect::to('/showUserById')->with('success', 'Stock has been deleted Successfully');;
-
     }
 }

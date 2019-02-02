@@ -37,8 +37,8 @@
                                 <a class="navbar-brand" href="{{ url('/showUserById') }}">Twoj Profil</a>
                             </li>
                             <li>
-                                <a class="navbar-brand" href="{{ url('/user') }}">
-                                    Szukaj
+                                <a class="navbar-brand" href="{{ url('/users') }}">
+                                    Przegladaj
                                 </a>
                             </li>
                             <li>

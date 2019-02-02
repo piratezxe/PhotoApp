@@ -31,7 +31,7 @@ class UserController extends Controller
     public static function show()
     {
         $users = DB::table('users')->get();
-        return view('user', ['users' => $users]);
+        return view('users', ['users' => $users]);
     }
     public static function filter($id)
     {

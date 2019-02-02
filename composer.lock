@@ -1266,19 +1266,20 @@
         },
         {
             "name": "league/flysystem-azure-blob-storage",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-azure-blob-storage.git",
-                "reference": "c1723d90bf7c15c27f3506cddd6c2cf9266dcf12"
+                "reference": "71897912d1acbb55119e42d7f1d05bbda2bb122f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-azure-blob-storage/zipball/c1723d90bf7c15c27f3506cddd6c2cf9266dcf12",
-                "reference": "c1723d90bf7c15c27f3506cddd6c2cf9266dcf12",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-azure-blob-storage/zipball/71897912d1acbb55119e42d7f1d05bbda2bb122f",
+                "reference": "71897912d1acbb55119e42d7f1d05bbda2bb122f",
                 "shasum": ""
             },
             "require": {
+                "guzzlehttp/psr7": "^1.5",
                 "league/flysystem": "^1.0",
                 "microsoft/azure-storage-blob": "^1.1",
                 "php": ">=5.6"
@@ -1302,7 +1303,7 @@
                     "email": "info@frenky.net"
                 }
             ],
-            "time": "2018-07-14T10:20:00+00:00"
+            "time": "2019-02-01T09:43:23+00:00"
         },
         {
             "name": "matthewbdaly/laravel-azure-storage",
