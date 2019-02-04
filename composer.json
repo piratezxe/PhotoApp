@@ -12,10 +12,10 @@
         "fideloper/proxy": "^4.0",
         "highideas/laravel-users-online": "^2.0",
         "joshrainwater/active-users": "^1.0",
+        "kim/activity": "^1.1",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "matthewbdaly/laravel-azure-storage": "^1.2",
-        "kim/activity": "^1.1"
+        "matthewbdaly/laravel-azure-storage": "^1.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

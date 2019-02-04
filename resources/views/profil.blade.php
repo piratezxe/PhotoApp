@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                    <img style="border-radius: 50%; width:100%;max-width:300px" src="{{asset("$users->avatar")}}" />
+                    <img style="border-radius: 50%; width:100%;max-width:200px" src={{"https://imageexample.blob.core.windows.net/container-example/" .$users->avatar }} />
             </div>
             <div class="col-lg-8 col-md-6">
             <div class="accordion" id="accordionExample">
@@ -52,11 +52,11 @@
                 @foreach($photos as $photo)
                     <div class="col-lg-3 col-sm-12 col-md-6">
                         <div style="mx-auto" class="row card" style="width: 18rem;"> 
-                            <img class="card-img-top" src="{{asset("storage/images/{$photo->uri}")}}" width="50%" height="auto" alt="Card image cap"/>
+                            <img class="card-img-top" src={{"https://imageexample.blob.core.windows.net/container-example/public/images/" .$photo->uri }}/>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{$photo->title}}
-                                </h5
+                                </h5>
                                 <p>
                                     {{$photo->desc}}
                                 </p>

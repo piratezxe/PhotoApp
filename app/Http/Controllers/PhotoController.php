@@ -48,10 +48,11 @@ class PhotoController extends Controller
                 $description = $request['description'];
                 $title = $request['title'];
                 $user_id = Auth::user()->id;
-                Storage::disk('local')->put('public/images/', $image, 'public');
+                //Storage::disk('local')->put('public/images/', $image, 'public');
+                Storage::disk('azure')->put('public/images/', $image);
                 Photos::create(['title' => $title, 'desc' => $description, 'uri' => $path, 'user_id' =>  $user_id]);
             }
-            return Redirect::to('/showUserById');
+        return Redirect::to('/showUserById');
     }
 
     /**
@@ -90,7 +91,7 @@ class PhotoController extends Controller
         $photo->title = $title;
         $photo->desc = $desc;
         $photo->save();
-        return redirect()->back();
+        return Redirect::to('/showUserById');
     }
 
     /**
