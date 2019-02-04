@@ -28,11 +28,12 @@
         <div class="row">
             @foreach($users as $user)
             <div class="col-lg-4 col-sm-12">
-                <div class="row card" style="width: 18rem;"> <img class="card-img-top" src="https://pickaface.net/gallery/avatar/acrovin559439058dc7f.png" width="200" height="200" alt="Card image cap">
+                <div class="row card" style="width: 18rem;"> <img class="card-img-top" src={{"https://imageexample.blob.core.windows.net/container-example/".$user->avatar}}  width="200" height="200" alt="Card image cap">
                     <div class="card-body">
-                    <h5 class="card-title">
-                        {{$user->name}}
-                    </h5>
+                        <h5 class="card-title">
+                            {{$user->name}}
+                        </h5>
+                        <a class="btn-danger" href="{{ url('showUserById', $user->id)}}">Click to visit profile</a>
                     </div>
                 </div>
             </div>

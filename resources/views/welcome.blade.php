@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hello
+                    Welcome in photo app !!!
                 </div>
             </div>
         </div>

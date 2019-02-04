@@ -14,19 +14,24 @@ class UserController extends Controller
         if($id == Null)
         {
             return Auth::user();
+        }else
+        {
+            return User::find($id);
         }
-        $user = User::find($id);
         return currentUser;
     }
     public function showUserById($id = null)
     {
         $users = $this->getCurrentUser($id);
-        return view('profil', ['users' => $users]);
+
+        $userPhotos = DB::table('photos')->where('user_id', $users->id)->get();
+
+        return view('profil', ['users' => $users, 'photos' => $userPhotos]);
     }
     public static function show()
     {
         $users = DB::table('users')->get();
-        return view('user', ['users' => $users]);
+        return view('users', ['users' => $users]);
     }
     public static function filter($id)
     {
