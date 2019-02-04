@@ -33,13 +33,12 @@
             <div class="accordion" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Username
-                        </button>
-                    </h2>
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Username
+                            </button>
+                        </h2>
                     </div>
-
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
                         {{$users->name}}
@@ -78,7 +77,8 @@
                                 <p>
                                     {{$photo->desc}}
                                 </p>
-                                <div style="display:flex"  class="photoEditButton">
+                                @if(\Illuminate\Support\Facades\Auth::id() == $users->id)
+                                    <div style="display:flex"  class="photoEditButton">
                                     <a href="{{ route('photos.edit', $photo->id ) }}" class="btn btn-primary">Edit</a>
                                     <form action="{{ route('photos.destroy', $photo->id)}}" method="post">
                                         @csrf
@@ -86,6 +86,7 @@
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                     </form>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
