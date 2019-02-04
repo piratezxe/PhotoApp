@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Photos;
 use Illuminate\Http\Request;
@@ -78,7 +77,7 @@ class PhotoController extends Controller
         return view('photos.edit', ['id' => $id]);
     }
 
-    
+
     public function update(Request $request, $id)
     {
         $request->validate([
